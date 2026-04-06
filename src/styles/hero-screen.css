@@ -1,0 +1,111 @@
+/* ========================================
+   HERO SCREEN — full-viewport layout
+   ======================================== */
+
+.hero-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  background-color: var(--bg-color);
+  transition: background-color var(--transition-speed) ease;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Atmospheric background glow */
+.hero-screen::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--accent-color) 8%, transparent),
+    transparent 60%
+  );
+  transition: background var(--transition-speed) ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-screen > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Header --- */
+.hero-header {
+  text-align: center;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-color);
+  transition: color var(--transition-speed) ease;
+  text-shadow: 0 0 40px color-mix(in srgb, var(--accent-color) 25%, transparent);
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.5rem;
+  min-height: 1.5em;
+  transition: color var(--transition-speed) ease;
+}
+
+/* --- Faction Grid (CSS Grid) --- */
+.faction-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  animation: fadeInUp 1s ease 0.2s both;
+}
+
+/* --- Responsive: tablet --- */
+@media (max-width: 900px) {
+  .faction-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    max-width: 600px;
+  }
+
+  .hero-screen {
+    height: auto;
+    min-height: 100vh;
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* --- Responsive: mobile --- */
+@media (max-width: 500px) {
+  .faction-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 360px;
+  }
+
+  .hero-screen {
+    gap: 2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-title {
+    letter-spacing: 0.06em;
+  }
+}
