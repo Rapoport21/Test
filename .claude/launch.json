@@ -10,9 +10,10 @@
     },
     {
       "name": "Vite Preview (Production Build)",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["vite", "preview", "--port", "4173"],
-      "port": 4173
+      "runtimeExecutable": "/Users/nickrapoport/.nvm/versions/node/v24.14.1/bin/node",
+      "runtimeArgs": ["node_modules/.bin/vite", "preview"],
+      "port": 4173,
+      "autoPort": true
     }
   ]
 }
