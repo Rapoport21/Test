@@ -1,0 +1,10 @@
+/* Design Intent styles go here */
+
+/* TEMP TEST — REMOVE BEFORE DESIGN PHASE */
+.plumbing-active {
+  outline: 2px solid lime;
+  background: #111;
+  color: lime;
+  padding: 4px 8px;
+}
+/* END TEMP TEST */
