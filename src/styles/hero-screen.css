@@ -3,8 +3,8 @@
    ======================================== */
 
 .hero-screen {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,17 +14,17 @@
   transition: background-color var(--transition-speed) ease;
   padding: 2rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Atmospheric background glow */
 .hero-screen::before {
   content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: radial-gradient(
     circle at 50% 50%,
     color-mix(in srgb, var(--accent-color) 8%, transparent),
@@ -86,8 +86,8 @@
   }
 
   .hero-screen {
-    height: auto;
     min-height: 100vh;
+    height: auto;
     padding: 2rem 1.5rem;
   }
 }
@@ -135,11 +135,24 @@
   }
 
   .hero-screen {
-    gap: 2rem;
-    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem 4rem;
+    justify-content: flex-start;
+    padding-top: 2rem;
   }
 
   .hero-title {
     letter-spacing: 0.06em;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    text-align: center;
   }
 }
