@@ -9,6 +9,8 @@ const factions = [
     accentColor: '#00ff88',
     bgColor: '#0a1a2f',
     image: import.meta.env.BASE_URL + 'images/finance-bro.png',
+    warning: 'SURGEON GENERAL\'S WARNING: This man will explain NFTs at dinner.',
+    dangerLevel: 'CRITICAL',
     stats: [
       { label: 'Ego', value: 5 },
       { label: 'Empathy', value: 1 },
@@ -24,6 +26,8 @@ const factions = [
     accentColor: '#9b59ff',
     bgColor: '#0d0a1a',
     image: import.meta.env.BASE_URL + 'images/drug-addict.png',
+    warning: 'CAUTION: Will borrow your car and return it with no gas.',
+    dangerLevel: 'EXTREME',
     stats: [
       { label: 'Reliability', value: 1 },
       { label: 'Bad Decisions', value: 5 },
@@ -39,6 +43,8 @@ const factions = [
     accentColor: '#ff4444',
     bgColor: '#1a0a0a',
     image: import.meta.env.BASE_URL + 'images/gym-bro.png',
+    warning: 'WARNING: Every meal will be photographed and macro-tracked.',
+    dangerLevel: 'SEVERE',
     stats: [
       { label: 'Strength', value: 5 },
       { label: 'Emotional Depth', value: 1 },
@@ -54,6 +60,8 @@ const factions = [
     accentColor: '#ff69b4',
     bgColor: '#1a0a18',
     image: import.meta.env.BASE_URL + 'images/identity-crisis.png',
+    warning: 'NOTICE: Personality subject to change without warning.',
+    dangerLevel: 'UNSTABLE',
     stats: [
       { label: 'Stability', value: 2 },
       { label: 'Rebrands', value: 5 },

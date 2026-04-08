@@ -121,6 +121,42 @@
   font-style: italic;
 }
 
+/* --- Danger Rating --- */
+.danger-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 0, 64, 0.1);
+  border: 1px solid rgba(255, 0, 64, 0.3);
+  border-radius: 4px;
+  width: fit-content;
+  animation: dangerPulse 2s ease infinite;
+}
+
+.danger-rating__label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.danger-rating__value {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ff0040;
+  text-shadow: 0 0 10px rgba(255, 0, 64, 0.5);
+  letter-spacing: 0.08em;
+}
+
+@keyframes dangerPulse {
+  0%, 100% { border-color: rgba(255, 0, 64, 0.3); box-shadow: none; }
+  50% { border-color: rgba(255, 0, 64, 0.6); box-shadow: 0 0 15px rgba(255, 0, 64, 0.15); }
+}
+
 /* --- Stats --- */
 .detail-stats {
   display: flex;

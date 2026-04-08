@@ -63,6 +63,12 @@ function CharacterDetail({ faction, onClose }) {
           <h2 className="detail-name">{faction.name}</h2>
           <p className="detail-tagline">{faction.tagline}</p>
 
+          {/* Red Flag Danger Rating */}
+          <div className="danger-rating">
+            <span className="danger-rating__label">DANGER LEVEL:</span>
+            <span className="danger-rating__value">{faction.dangerLevel}</span>
+          </div>
+
           <div className="detail-stats">
             {faction.stats.map((stat) => (
               <StatBar
