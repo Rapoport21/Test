@@ -43,7 +43,7 @@ function HeroScreen({ factions, activeFaction, onHover, onSelect, compareMode, c
           className={`hero-btn ${compareMode ? 'hero-btn--active' : ''}`}
           onClick={onToggleCompare}
         >
-          {compareMode ? 'Cancel Compare' : 'Toxic Matchup'}
+          {compareMode ? 'Cancel Compare' : 'Compare'}
         </button>
         <button className="hero-btn" onClick={onShowRandomizer}>
           Spin the Wheel
