@@ -1,10 +1,11 @@
 import '../styles/faction-card.css'
 
-function FactionCard({ faction, isActive, isFaded, onMouseEnter, onMouseLeave }) {
+function FactionCard({ faction, isActive, isFaded, isCompareSelected, onMouseEnter, onMouseLeave, onClick }) {
   const classes = [
     'faction-card',
     isActive ? 'faction-card--active' : '',
     isFaded ? 'faction-card--faded' : '',
+    isCompareSelected ? 'faction-card--compare-selected' : '',
   ]
     .filter(Boolean)
     .join(' ')
@@ -15,6 +16,7 @@ function FactionCard({ faction, isActive, isFaded, onMouseEnter, onMouseLeave })
       style={{ '--card-accent': faction.accentColor }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onClick={onClick}
     >
       <div className="faction-card__visual">
         {faction.image ? (

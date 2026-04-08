@@ -1,0 +1,161 @@
+/* ========================================
+   RANDOMIZER — Wheel of Bad Decisions
+   ======================================== */
+
+.randomizer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+  padding: 1rem;
+}
+
+.randomizer-panel {
+  max-width: 500px;
+  width: 100%;
+  background: linear-gradient(135deg, #1a1a2e, #111);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2.5rem;
+  position: relative;
+  text-align: center;
+  animation: slideUp 0.4s ease;
+}
+
+.randomizer-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ff0040;
+  text-shadow: 0 0 20px rgba(255, 0, 64, 0.4);
+  margin-bottom: 0.25rem;
+}
+
+.randomizer-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+/* --- Slot display --- */
+.randomizer-display {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.randomizer-display--spinning {
+  border-color: rgba(255, 255, 255, 0.3);
+  animation: slotFlash 0.2s infinite alternate;
+}
+
+.randomizer-display--result {
+  border-color: var(--slot-accent);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--slot-accent) 25%, transparent);
+}
+
+@keyframes slotFlash {
+  from { background: rgba(255, 255, 255, 0.02); }
+  to { background: rgba(255, 255, 255, 0.06); }
+}
+
+.randomizer-slot {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.randomizer-img {
+  width: 100px;
+  height: 133px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.randomizer-slot__info {
+  text-align: left;
+}
+
+.randomizer-slot__name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.randomizer-display--result .randomizer-slot__name {
+  color: var(--slot-accent);
+  text-shadow: 0 0 12px var(--slot-accent);
+}
+
+.randomizer-slot__tagline {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.25rem;
+}
+
+/* --- Spin button --- */
+.randomizer-spin-btn {
+  padding: 1rem 3rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: linear-gradient(135deg, #ff0040, #cc0033);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.randomizer-spin-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 0, 64, 0.5);
+}
+
+.randomizer-spin-btn--disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
+}
+
+/* --- Result --- */
+.randomizer-result {
+  animation: fadeIn 0.5s ease;
+}
+
+.randomizer-result__text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ff0040;
+  margin-bottom: 1rem;
+}
+
+.randomizer-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

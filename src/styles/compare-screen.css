@@ -1,0 +1,213 @@
+/* ========================================
+   COMPARE SCREEN — VS overlay
+   ======================================== */
+
+.compare-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+  padding: 1rem;
+}
+
+.compare-panel {
+  max-width: 800px;
+  width: 100%;
+  background: linear-gradient(135deg, #1a1a2e, #111);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 2.5rem;
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+
+/* --- Header with fighters --- */
+.compare-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.compare-fighter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.compare-img {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.compare-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.compare-vs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.compare-vs__text {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ff0040;
+  text-shadow: 0 0 30px rgba(255, 0, 64, 0.5);
+  animation: vsPulse 1.5s ease infinite;
+}
+
+@keyframes vsPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.8; }
+}
+
+.compare-compat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compare-compat__num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff0040;
+}
+
+.compare-compat__label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* --- Stat comparison bars --- */
+.compare-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.compare-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compare-stat__val {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 1.5rem;
+  text-align: center;
+}
+
+.compare-stat__bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.compare-stat__label {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.compare-stat__fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+  opacity: 0.7;
+}
+
+.compare-stat__fill--left {
+  position: absolute;
+  left: 0;
+}
+
+.compare-stat__fill--right {
+  position: absolute;
+  right: 0;
+}
+
+/* --- Verdict --- */
+.compare-verdict {
+  margin-top: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.compare-verdict__icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.compare-verdict__text {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff0040;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 15px rgba(255, 0, 64, 0.4);
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .compare-panel {
+    padding: 1.5rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .compare-header {
+    gap: 1rem;
+  }
+
+  .compare-img {
+    width: 80px;
+    height: 107px;
+  }
+
+  .compare-vs__text {
+    font-size: 1.8rem;
+  }
+}

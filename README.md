@@ -1,7 +1,7 @@
-# Hero Faction Screen
+# Choose Your Red Flag
 
 **AI 201 — Project 1**
-Live URL: `https://<your-username>.github.io/Test/`
+Live URL: `https://rapoport21.github.io/Test/`
 
 ---
 
@@ -16,10 +16,10 @@ Live URL: `https://<your-username>.github.io/Test/`
 | Role | Value | Preview |
 |------|-------|---------|
 | Background (default) | `#111` | |
-| Ironclad accent | `#d4a843` | |
-| Voidborn accent | `#7b2d8e` | |
-| Solari accent | `#e8651a` | |
-| Tidecaller accent | `#2ec4b6` | |
+| Finance Bro accent | `#00ff88` | |
+| Sleep-Deprived Prophet accent | `#9b59ff` | |
+| Gym Bro accent | `#ff4444` | |
+| Identity Crisis Millennial accent | `#ff69b4` | |
 
 **Typography:**
 - Display / Headers: Oswald, 700, uppercase, wide letter-spacing
